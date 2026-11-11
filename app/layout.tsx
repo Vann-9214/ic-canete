@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 const profile = getProfile();
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://iccanete.dev"),
   title: {
     default: `${profile.name} — ${profile.role}`,
     template: `%s | ${profile.handle}`,

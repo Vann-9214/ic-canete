@@ -137,14 +137,14 @@ description: "Dependency-ordered task list for ICCañete Personal Portfolio Webs
 **Goal**: Deliver User Story 1 (`US1`)—visitors can scan identity, social links, resume download, About Me + unified timeline, Featured Projects, and Tech Stack on the Home page with all edge-case fallbacks.
 **Independent Test**: Load `http://localhost:3000` and verify Hero actions (including missing-PDF fallback), About Me + Timeline combinations, Featured Projects cards, and Tech Stack icon error fallback.
 
-- [ ] T016 [P] [US1] Implement `HeroSection` component in `components/home/hero-section.tsx`
+- [x] T016 [P] [US1] Implement `HeroSection` component in `components/home/hero-section.tsx`
   - **DESIGN.md Reference**: §1.1 (Color Tokens), §1.3 (Display Hero Typography), §3.1 (Home Wireframe — Hero), §4.2 (`HeroSection` States), §5.2 (`scale(0.96)` Button Press)
   - **Acceptance Criteria**:
     - Renders `profile.handle` monospace pill, `profile.name` (`h1`), `profile.role`, and `profile.tagline` (`max-w-[62ch]`) inside initial-visible server HTML so slow connections never block text (`FR-002`, `FR-020`).
     - Renders social icon buttons (`min-h-11 min-w-11` / `44x44px`, `target="_blank" rel="noopener noreferrer"`) for all configured socials in `profile.socials` (`FR-003`).
     - Places `Download CV` button beside the social buttons: when `profile.hasResumeFile` is `true`, renders `<a href={profile.resumeUrl} download>`; when `false`, renders `<button type="button">` that toggles an inline message `"Resume not available right now."` (`role="status" aria-live="polite"`) without navigating to a broken link (`FR-004`).
 
-- [ ] T017 [P] [US1] Implement `AboutTimeline` component in `components/home/about-timeline.tsx`
+- [x] T017 [P] [US1] Implement `AboutTimeline` component in `components/home/about-timeline.tsx`
   - **DESIGN.md Reference**: §1.2 (Timeline Badge Tokens), §1.3 (Typography Scale), §3.1 (Home Wireframe `01 / ABOUT ME & JOURNEY`), §4.3 (`AboutTimeline` States)
   - **Acceptance Criteria**:
     - Renders `About Me` narrative paragraphs (`max-w-[68ch]`) alongside the ordered unified timeline covering `"work" | "school" | "career" | "certification" | "achievement"` entries (`FR-005`).
@@ -152,21 +152,21 @@ description: "Dependency-ordered task list for ICCañete Personal Portfolio Webs
     - Enforces all 3 empty-state combinations (`FR-007`): if `aboutMe` is empty, renders only the timeline; if `timeline` is empty, renders only `aboutMe`; if both are empty, returns `null` so the entire section is hidden.
     - Uses single-column layout on small viewports (`< 1024px`) and wraps long text cleanly (`FR-007`).
 
-- [ ] T018 [P] [US1] Implement `FeaturedProjects` component in `components/home/featured-projects.tsx`
+- [x] T018 [P] [US1] Implement `FeaturedProjects` component in `components/home/featured-projects.tsx`
   - **DESIGN.md Reference**: §3.1 (Home Wireframe `02 / FEATURED PROJECTS`), §4.5 (`FeaturedProjects` States), §4.8 (`ProjectCard`)
   - **Acceptance Criteria**:
     - Renders a 3-column desktop (`grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6`) grid of `ProjectCard` items for all featured projects plus a `"See all projects"` button linking to `/projects` (`FR-008`).
     - Staggers card reveals by `80ms` (`max 240ms`) using `Reveal` (`DESIGN.md` §5.2).
     - If `projects.length === 0` (no project flagged as featured), renders only the `"See all projects"` button container (`FR-008`).
 
-- [ ] T019 [P] [US1] Implement `TechStackSection` component in `components/home/tech-stack-section.tsx`
+- [x] T019 [P] [US1] Implement `TechStackSection` component in `components/home/tech-stack-section.tsx`
   - **DESIGN.md Reference**: §3.1 (Home Wireframe `03 / TECH STACK`), §4.6 (`TechStackSection` States)
   - **Acceptance Criteria**:
     - Renders a responsive grid (`grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4`) showing each item's `24x24px` icon and `name` (`FR-009`).
     - If an item's `icon` path is empty or triggers `onError`, hides the broken image element and displays the item's `name` only (`FR-009`).
     - If `items.length === 0`, returns `null` so the entire section is hidden (`FR-009`).
 
-- [ ] T020 [US1] Assemble the complete Home page in `app/page.tsx`
+- [x] T020 [US1] Assemble the complete Home page in `app/page.tsx`
   - **DESIGN.md Reference**: §2.1–§2.2 (Breakpoints & Anchor Offsets), §3.1 (Home Page Desktop & Mobile Wireframes)
   - **Acceptance Criteria**:
     - Loads `getProfile()`, `getTimeline()`, `getFeaturedProjects()`, and `getTechStack()` from `lib/content.ts`.
@@ -181,39 +181,39 @@ description: "Dependency-ordered task list for ICCañete Personal Portfolio Webs
 **Goal**: Deliver User Story 2 (`US2`)—visitors can browse all projects by category, see each category's best project in the Projects Hero, open full Project Detail pages with galleries/links/downloads, return to the originating category tab, and hit a helpful 404 page on invalid project slugs.
 **Independent Test**: Open `http://localhost:3000/projects`, switch category tabs, open a project detail page, verify back-to-category navigation, and test `/projects/non-existent`.
 
-- [ ] T021 [P] [US2] Implement `ProjectsHero` spotlight component in `components/projects/projects-hero.tsx`
+- [x] T021 [P] [US2] Implement `ProjectsHero` spotlight component in `components/projects/projects-hero.tsx`
   - **DESIGN.md Reference**: §1.4 (Concentric Border Radius System `rounded-[20px]` outer / `rounded-lg` inner), §3.2 (All Projects Wireframe — Projects Hero), §4.7 (`ProjectsHero` States)
   - **Acceptance Criteria**:
     - Displays the page `headline` (`h1`) and `explanation` paragraph from `ProjectsIntro`; if `explanation` is empty (`""`), omits the explanation paragraph and shows only the `bestProject` spotlight card (`FR-010`).
     - Renders a clickable spotlight card linking to `/projects/${bestProject.slug}?from=${encodeURIComponent(activeCategory)}` showing the selected category's `bestProject` (`title`, `shortDescription`, `CategoryBadge`, `"Featured in Category"` badge, and `16:9` `ImageWithFallback` main image) (`FR-010`, `FR-014`).
 
-- [ ] T022 [P] [US2] Implement accessible `CategoryTabs` component in `components/projects/category-tabs.tsx`
+- [x] T022 [P] [US2] Implement accessible `CategoryTabs` component in `components/projects/category-tabs.tsx`
   - **DESIGN.md Reference**: §3.2 (All Projects Wireframe — Category Tabs), §4.7 (`CategoryTabs` States), §5.2 (`scale(0.96)` Tab Press)
   - **Acceptance Criteria**:
     - Renders `role="tablist"` with buttons (`role="tab"`, `aria-selected`, `min-h-11 px-4 rounded-[10px] font-mono text-sm`) for each populated category and its project count (`FR-011`, `FR-012`).
     - If `categories.length <= 1`, returns `null` so no extra tabs are rendered when only one category exists (`FR-011`).
 
-- [ ] T023 [US2] Implement client `ProjectsBrowser` state & URL sync component in `components/projects/projects-browser.tsx`
+- [x] T023 [US2] Implement client `ProjectsBrowser` state & URL sync component in `components/projects/projects-browser.tsx`
   - **DESIGN.md Reference**: §3.2 (All Projects Wireframe), §4.7 (`ProjectsBrowser` States), §5.2 (Category Tab Content Switch `150ms`)
   - **Acceptance Criteria**:
     - Reads initial `?category=` search param (falling back to `categories[0].category` if absent or invalid) and updates the URL query parameter via `window.history.replaceState` when a tab is clicked without causing a full page reload (`FR-012`, `FR-016`).
     - Switching a tab updates both `ProjectsHero` (`bestProject` for that category) and the 3-column `ProjectCard` grid while keeping the `intro.explanation` text unchanged (`FR-010`, `FR-012`).
     - If `categories.length === 0`, renders the `"Projects coming soon"` empty state card (`FR-011`).
 
-- [ ] T024 [US2] Implement the All Projects page route in `app/projects/page.tsx`
+- [x] T024 [US2] Implement the All Projects page route in `app/projects/page.tsx`
   - **DESIGN.md Reference**: §3.2 (Page 2: All Projects Wireframes)
   - **Acceptance Criteria**:
     - Exports static `metadata: Metadata` (`title: "All Projects"`, `description` from `getProjectsIntro().explanation`) (`FR-010`).
     - Loads `getProjectsIntro()` and `getCategoriesWithProjects()` on the server and renders `ProjectsBrowser` wrapped in `<Suspense>` for client search-param reading (`FR-010`, `FR-011`, `FR-012`, `SC-002`).
 
-- [ ] T025 [P] [US2] Implement multi-picture `ProjectGallery` component in `components/projects/project-gallery.tsx`
+- [x] T025 [P] [US2] Implement multi-picture `ProjectGallery` component in `components/projects/project-gallery.tsx`
   - **DESIGN.md Reference**: §3.3 (Page 3 Wireframe — Project Gallery), §4.9 (`ProjectGallery` States)
   - **Acceptance Criteria**:
     - Renders all images in `project.images` inside a readable responsive grid (`grid-cols-1 md:grid-cols-2 gap-6`) with `ImageWithFallback` (`16:9` frame, `rounded-xl`, `outline-image-outline`) and optional `<figcaption>` (`FR-015`).
     - If an individual picture fails to load, `ImageWithFallback` keeps the rest of the gallery and page content intact (`FR-015`, `SC-003`).
     - Returns `null` when `images.length === 0` (`FR-015`).
 
-- [ ] T026 [US2] Implement the Project Detail page route in `app/projects/[slug]/page.tsx`
+- [x] T026 [US2] Implement the Project Detail page route in `app/projects/[slug]/page.tsx`
   - **DESIGN.md Reference**: §2.2 (Readable Text Measure `max-w-[68ch]`), §3.3 (Page 3: Project Detail Wireframe), §4.11 (Project Detail Links & Downloads Bar)
   - **Acceptance Criteria**:
     - Exports `generateStaticParams()` from `getAllProjects()` and `generateMetadata({ params })` (awaiting `params: Promise<{ slug: string }>`) (`FR-015`).
@@ -221,7 +221,7 @@ description: "Dependency-ordered task list for ICCañete Personal Portfolio Webs
     - Renders a `"Back to Projects"` link at the top that reads `?from=` from `searchParams` and links to `/projects?category=${encodeURIComponent(from)}` (or `/projects` when absent) (`FR-016`).
     - Renders `CategoryBadge`, `project.title` (`h1`), `project.shortDescription`, external `project.links` (`target="_blank" rel="noopener noreferrer"`, hidden if `links.length === 0`), downloadable `project.downloads` (`download` attribute with `fileSize` badge, hidden if `downloads.length === 0`), main hero image, MDX `fullDetails` compiled via `next-mdx-remote/rsc` in a `max-w-[68ch]` prose container, and `ProjectGallery`—isolating external links and downloads as standalone anchor elements so an unreachable link or download never breaks the page (`FR-015`, `SC-003`).
 
-- [ ] T027 [P] [US2] Implement Project 404 page (`app/projects/[slug]/not-found.tsx`) and global 404 page (`app/not-found.tsx`)
+- [x] T027 [P] [US2] Implement Project 404 page (`app/projects/[slug]/not-found.tsx`) and global 404 page (`app/not-found.tsx`)
   - **DESIGN.md Reference**: §3.3 (Project Not Found `404` Wireframe)
   - **Acceptance Criteria**:
     - Both `app/projects/[slug]/not-found.tsx` and `app/not-found.tsx` render a centered card (`max-w-lg mx-auto my-20 p-8 rounded-2xl bg-surface border border-border-subtle text-center`) with a `404 NOT FOUND` monospace badge, heading, explanation message, and a primary CTA button linking back to `/projects` (`FR-017`, `SC-003`).
@@ -235,12 +235,12 @@ description: "Dependency-ordered task list for ICCañete Personal Portfolio Webs
 **Goal**: Deliver User Story 3 (`US3`)—validated Contact Me form and `POST /api/contact` Resend route handler with duplicate-submit and spam protection—and User Story 4 (`US4`) SEO/crawler discovery routes.
 **Independent Test**: Submit invalid/valid payloads to `#contact` and `POST /api/contact`, verify validation errors, loading lock, Resend email payload, and error state input preservation, and inspect `/sitemap.xml`, `/robots.txt`, and `/opengraph-image`.
 
-- [ ] T028 [P] [US3] Implement in-memory per-IP sliding-window rate limiter (`max 3 requests per 10 minutes`) in `lib/rate-limit.ts`
+- [x] T028 [P] [US3] Implement in-memory per-IP sliding-window rate limiter (`max 3 requests per 10 minutes`) in `lib/rate-limit.ts`
   - **DESIGN.md Reference**: §4.10 (`ContactForm` Error / Rate-Limit States)
   - **Acceptance Criteria**:
     - Exports `checkRateLimit(ip: string): { allowed: boolean; retryAfterSeconds: number }` enforcing a limit of 3 requests per `600_000ms` window per IP (`FR-022`, `contracts/contact-api.md` §2.3) and a helper `resetRateLimits()` for testing.
 
-- [ ] T029 [US3] Implement `POST /api/contact` Route Handler with Zod validation, honeypot spam check, rate limiting, and Resend email delivery in `app/api/contact/route.ts`
+- [x] T029 [US3] Implement `POST /api/contact` Route Handler with Zod validation, honeypot spam check, rate limiting, and Resend email delivery in `app/api/contact/route.ts`
   - **DESIGN.md Reference**: §4.10 (`ContactForm` API Integration)
   - **Acceptance Criteria**:
     - Validates request JSON with `contactSchema` (`name` 1..100 chars, `email` valid email max 254 chars, `message` 1..2000 chars); returns `400` with `{ ok: false, message, fieldErrors }` on invalid fields (`FR-021`, `contracts/contact-api.md` §2.2).
@@ -249,7 +249,7 @@ description: "Dependency-ordered task list for ICCañete Personal Portfolio Webs
     - Checks `process.env.RESEND_API_KEY` and `process.env.CONTACT_RECIPIENT_EMAIL`; if missing or if `resend.emails.send` fails/throws, logs diagnostic details via `console.error` and returns `500` with the safe message `"We couldn't send your message right now. Your text has been kept—please try again in a moment."` (`FR-023`, `SC-003`, `contracts/contact-api.md` §2.4).
     - Sends email via `Resend` with `replyTo: validatedData.email` and returns `200` `{ ok: true, message: "Message sent! Thank you for reaching out—I'll get back to you soon." }` (`FR-022`, `FR-023`, `SC-005`).
 
-- [ ] T030 [P] [US3] Implement client `ContactForm` component in `components/home/contact-form.tsx`
+- [x] T030 [P] [US3] Implement client `ContactForm` component in `components/home/contact-form.tsx`
   - **DESIGN.md Reference**: §1.1 (Status Tokens), §3.1 (Home Wireframe `04 / CONTACT ME`), §4.10 (`ContactForm` States), §5.2 (`scale(0.96)` Button Press)
   - **Acceptance Criteria**:
     - Renders controlled inputs for `name` (required, max 100 chars), `email` (required, valid email), `message` (required, max 2,000 chars with live `tabular-nums` `${message.length} / 2000` counter that turns `text-status-error-text` if `> 2000`), and hidden honeypot `website` (`className="sr-only" tabIndex={-1} autoComplete="off" aria-hidden="true"`) (`FR-021`, `FR-022`).
@@ -258,12 +258,12 @@ description: "Dependency-ordered task list for ICCañete Personal Portfolio Webs
     - On `200 OK`, shows the green confirmation banner (`role="status"`) displaying `"Message sent! Thank you for reaching out—I'll get back to you soon."` and clears `name`, `email`, and `message` to `""` (`FR-023`, `SC-005`).
     - On `400`/`429`/`500` or network failure, shows the red error banner (`role="alert"`) suggesting the visitor try again while **keeping** their typed `name`, `email`, and `message` intact (`FR-023`, `SC-003`, `SC-005`).
 
-- [ ] T031 [US3] Replace the Phase 0 stub in `components/home/contact-section.tsx` with the complete Contact Me section rendering `ContactForm`
+- [x] T031 [US3] Replace the Phase 0 stub in `components/home/contact-section.tsx` with the complete Contact Me section rendering `ContactForm`
   - **DESIGN.md Reference**: §3.1 (Home Wireframe `04 / CONTACT ME`), §4.10 (`ContactForm`), §4.11 (`ContactSection`)
   - **Acceptance Criteria**:
     - Wraps `ContactForm` inside `<SectionWrapper id="contact" index="04" title="Contact Me">` with introductory prompt copy and a `rounded-2xl bg-surface border border-border-subtle p-6 md:p-8 shadow-card` container (`FR-001`, `FR-021`).
 
-- [ ] T032 [P] [US4] Implement dynamic `sitemap.ts` (`app/sitemap.ts`), `robots.ts` (`app/robots.ts`), and OpenGraph preview image (`app/opengraph-image.tsx`)
+- [x] T032 [P] [US4] Implement dynamic `sitemap.ts` (`app/sitemap.ts`), `robots.ts` (`app/robots.ts`), and OpenGraph preview image (`app/opengraph-image.tsx`)
   - **DESIGN.md Reference**: §1.1 (Color Tokens), §1.3 (Typography)
   - **Acceptance Criteria**:
     - `app/sitemap.ts` generates sitemap entries for `/`, `/projects`, and every `/projects/[slug]` returned by `getAllProjects()` (`FR-014`, `FR-024`).
@@ -274,7 +274,7 @@ description: "Dependency-ordered task list for ICCañete Personal Portfolio Webs
 
 ## Phase 1 Build Check (After Streams A, B, and C Complete)
 
-- [ ] T033 Execute **Phase 1 Build Check**: Run `npm run lint` and `npm run build` in repository root after merging/completing Streams A, B, and C
+- [x] T033 Execute **Phase 1 Build Check**: Run `npm run lint` and `npm run build` in repository root after merging/completing Streams A, B, and C
   - **DESIGN.md Reference**: All Sections (§1–§5)
   - **Acceptance Criteria**:
     - `npm run lint` passes with zero warnings or errors (`SC-003`).
