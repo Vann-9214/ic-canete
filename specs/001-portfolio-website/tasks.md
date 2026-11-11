@@ -28,14 +28,14 @@ description: "Dependency-ordered task list for ICCañete Personal Portfolio Webs
 
 **⚠️ CRITICAL**: Complete all Phase 0 tasks including `T015` (Phase 0 Build Check) before starting Phase 1.
 
-- [ ] T001 Install runtime (`resend`, `zod`, `gray-matter`, `next-mdx-remote`, `lucide-react`) and test (`vitest`, `@vitejs/plugin-react`, `jsdom`, `@testing-library/react`, `@testing-library/jest-dom`) packages and add `"test": "vitest run"` script in `package.json`
+- [x] T001 Install runtime (`resend`, `zod`, `gray-matter`, `next-mdx-remote`, `lucide-react`) and test (`vitest`, `@vitejs/plugin-react`, `jsdom`, `@testing-library/react`, `@testing-library/jest-dom`) packages and add `"test": "vitest run"` script in `package.json`
   - **DESIGN.md Reference**: Header & §1.3 (Icon & framework setup)
   - **Acceptance Criteria**:
     - `package.json` lists `resend`, `zod`, `gray-matter`, `next-mdx-remote`, and `lucide-react` in `dependencies` (`FR-022`, `FR-024`).
     - `package.json` lists `vitest`, `@vitejs/plugin-react`, `jsdom`, `@testing-library/react`, and `@testing-library/jest-dom` in `devDependencies` and defines `"test": "vitest run"` in `scripts` (`SC-003`).
     - `node_modules` installs cleanly with zero unresolved peer dependency errors.
 
-- [ ] T002 Configure three-layer CSS design tokens, Tailwind v4 `@theme inline` mappings, `@media (prefers-color-scheme: dark)` system theme overrides, and `@media (prefers-reduced-motion: reduce)` rules in `app/globals.css`
+- [x] T002 Configure three-layer CSS design tokens, Tailwind v4 `@theme inline` mappings, `@media (prefers-color-scheme: dark)` system theme overrides, and `@media (prefers-reduced-motion: reduce)` rules in `app/globals.css`
   - **DESIGN.md Reference**: §1.1 (Color Tokens), §1.4 (Spacing, Concentric Border Radii, and Elevation), §1.5 (Exact `app/globals.css` Token Implementation), §5.3 (Reduced Motion Override)
   - **Acceptance Criteria**:
     - `:root` defines all Light Mode semantic variables (`--bg-canvas: #F8FAFC`, `--bg-surface: #FFFFFF`, `--text-primary: #0F172A`, `--accent-primary: #2563EB`, etc.) as the default fallback when no system preference is reported (`FR-019`, `SC-004`).
@@ -43,33 +43,33 @@ description: "Dependency-ordered task list for ICCañete Personal Portfolio Webs
     - `@theme inline` maps all semantic variables (`--color-canvas`, `--color-surface`, `--color-text-primary`, `--color-image-outline`, `--shadow-card`, `--shadow-card-hover`, `--font-sans`, `--font-mono`, etc.) (`FR-024`).
     - `@media (prefers-reduced-motion: reduce)` forces `animation-duration: 0.01ms !important`, `transition-duration: 0.01ms !important`, and `.reveal-hidden { opacity: 1 !important; transform: none !important; }` (`FR-020`, `SC-004`).
 
-- [ ] T003 Define TypeScript interfaces for `Profile`, `ProfileData`, `SocialLink`, `TimelineEntry`, `TechStackItem`, `ProjectsIntro`, `Project`, `ProjectImage`, `ProjectLink`, `ProjectDownload`, and `ContactSubmission` in `lib/types.ts`
+- [x] T003 Define TypeScript interfaces for `Profile`, `ProfileData`, `SocialLink`, `TimelineEntry`, `TechStackItem`, `ProjectsIntro`, `Project`, `ProjectImage`, `ProjectLink`, `ProjectDownload`, and `ContactSubmission` in `lib/types.ts`
   - **DESIGN.md Reference**: §1.2 (Semantic Category & Timeline Badge Tokens), §4.2–§4.11 (Component Props)
   - **Acceptance Criteria**:
     - Exports all entity interfaces matching `specs/001-portfolio-website/data-model.md` §2.1–§2.6 (`FR-001`–`FR-024`).
     - `TimelineEntry["type"]` is typed as the exact union `"work" | "school" | "career" | "certification" | "achievement"` (`FR-005`).
     - `TimelineEntry["endDate"]` is typed as `string | null | undefined` (`FR-006`).
 
-- [ ] T004 [P] Implement Zod validation schemas for content files (`profileSchema`, `timelineEntrySchema`, `techStackItemSchema`, `projectsIntroSchema`, `projectFrontmatterSchema`) in `lib/validations/content.ts` and contact payload (`contactSchema`) in `lib/validations/contact.ts`
+- [x] T004 [P] Implement Zod validation schemas for content files (`profileSchema`, `timelineEntrySchema`, `techStackItemSchema`, `projectsIntroSchema`, `projectFrontmatterSchema`) in `lib/validations/content.ts` and contact payload (`contactSchema`) in `lib/validations/contact.ts`
   - **DESIGN.md Reference**: §4.2–§4.11 (Component States & Validation)
   - **Acceptance Criteria**:
     - `lib/validations/content.ts` validates `TimelineEntry.type` against `"work" | "school" | "career" | "certification" | "achievement"`, normalizes missing/empty `endDate` to `null` (`FR-006`), and provides safe defaults on `projectFrontmatterSchema` (`images: []`, `links: []`, `downloads: []`, `isFeatured: false`, `isBestInCategory: false`, `order: 999`) (`FR-008`, `FR-015`, `FR-024`).
     - `lib/validations/contact.ts` enforces exact constraints from `data-model.md` §2.6 and `contracts/contact-api.md` §1: `name` (`string().trim().min(1, "Name is required.").max(100, "Name must be 100 characters or fewer.")`), `email` (`string().trim().min(1, "Email is required.").email("Please enter a valid email address.").max(254)`), `message` (`string().trim().min(1, "Message is required.").max(2000, "Message exceeds the 2,000-character limit.")`), and optional honeypot `website` (`string().optional()`) (`FR-021`, `FR-022`).
 
-- [ ] T005 [P] Seed repository content files (`content/profile.json`, `content/timeline.json`, `content/tech-stack.json`, `content/projects-intro.json`) and 3 sample project MDX files across Software, Game Dev, and Hardware (`content/projects/sentinel-cloud-observability.mdx`, `content/projects/neon-drift-shader-engine.mdx`, `content/projects/autonomous-rover-telemetry.mdx`)
+- [x] T005 [P] Seed repository content files (`content/profile.json`, `content/timeline.json`, `content/tech-stack.json`, `content/projects-intro.json`) and 3 sample project MDX files across Software, Game Dev, and Hardware (`content/projects/sentinel-cloud-observability.mdx`, `content/projects/neon-drift-shader-engine.mdx`, `content/projects/autonomous-rover-telemetry.mdx`)
   - **DESIGN.md Reference**: §3.1–§3.3 (Page Wireframes & Content Structure)
   - **Acceptance Criteria**:
     - JSON files match the sample schemas in `specs/001-portfolio-website/data-model.md` §2.1–§2.4, including all 5 timeline entry types (`work`, `school`, `career`, `certification`, `achievement`) with at least one `endDate: null` ongoing entry (`FR-005`, `FR-006`, `FR-024`).
     - The 3 MDX files in `content/projects/` cover `"Software"`, `"Game Dev"`, and `"Hardware"`, each with valid YAML frontmatter (`title`, `shortDescription`, `category`, `isFeatured`, `isBestInCategory`, `order`, `images`, `links`, `downloads`) and multi-section Markdown body (`## Overview`, `## Technical Highlights`) (`FR-008`, `FR-010`, `FR-015`, `FR-024`).
 
-- [ ] T006 [P] Create static assets including sample resume PDF (`public/resume.pdf`), sample project download (`public/downloads/sentinel-architecture.pdf`), SVG tech stack icons (`public/icons/tech/*.svg`), and SVG project preview graphics (`public/images/projects/*.svg`)
+- [x] T006 [P] Create static assets including sample resume PDF (`public/resume.pdf`), sample project download (`public/downloads/sentinel-architecture.pdf`), SVG tech stack icons (`public/icons/tech/*.svg`), and SVG project preview graphics (`public/images/projects/*.svg`)
   - **DESIGN.md Reference**: §4.2 (`HeroSection`), §4.6 (`TechStackSection`), §4.8 (`ProjectCard`)
   - **Acceptance Criteria**:
     - `public/resume.pdf` and `public/downloads/sentinel-architecture.pdf` exist as valid non-empty PDF files (`FR-004`, `FR-015`).
     - All icon paths referenced in `content/tech-stack.json` exist under `public/icons/tech/` (`FR-009`).
     - All image paths referenced in `content/projects/*.mdx` exist under `public/images/projects/` (`FR-008`, `FR-013`, `FR-015`).
 
-- [ ] T007 Implement server-side content loader functions (`getProfile`, `getTimeline`, `getTechStack`, `getProjectsIntro`, `getAllProjects`, `getFeaturedProjects`, `getCategoriesWithProjects`, `getProjectBySlug`) in `lib/content.ts`
+- [x] T007 Implement server-side content loader functions (`getProfile`, `getTimeline`, `getTechStack`, `getProjectsIntro`, `getAllProjects`, `getFeaturedProjects`, `getCategoriesWithProjects`, `getProjectBySlug`) in `lib/content.ts`
   - **DESIGN.md Reference**: §4.2–§4.9, §4.11 (Data-driven Component States)
   - **Acceptance Criteria**:
     - Implements all function signatures and behavioral guarantees in `specs/001-portfolio-website/contracts/content-loader.md` §1–§2 (`FR-001`–`FR-017`, `FR-024`).
@@ -77,50 +77,50 @@ description: "Dependency-ordered task list for ICCañete Personal Portfolio Webs
     - `getAllProjects()` and `getProjectBySlug()` filter out any `links` or `downloads` item with an empty `label` or `url`/`fileUrl` so malformed or broken entries never break project pages (`FR-008`, `FR-015`).
     - `getCategoriesWithProjects()` excludes categories with `0` projects (`FR-011`), orders categories by `projects-intro.json`'s `categoryOrder`, and selects `bestProject` as the first project with `isBestInCategory === true` or falls back to `projects[0]` (`FR-010`).
 
-- [ ] T008 [P] Implement non-blocking scroll-reveal wrapper (`components/ui/reveal.tsx`) and shared section layout container (`components/ui/section-wrapper.tsx`)
+- [x] T008 [P] Implement non-blocking scroll-reveal wrapper (`components/ui/reveal.tsx`) and shared section layout container (`components/ui/section-wrapper.tsx`)
   - **DESIGN.md Reference**: §1.3 (Typography Scale), §1.4 (Spacing), §2.1–§2.2 (Responsive Breakpoints & `scroll-mt-20` Anchor Offset), §4.11 (`SectionWrapper` & `Reveal`), §5.1–§5.3 (Motion Specification)
   - **Acceptance Criteria**:
     - `components/ui/reveal.tsx` renders children immediately in SSR HTML (never hiding content if JS or `IntersectionObserver` is unavailable) and applies `260ms cubic-bezier(0.22, 1, 0.36, 1)` `opacity` + `translateY(8px -> 0)` transition with optional `delayMs` prop while respecting `prefers-reduced-motion: reduce` (`FR-020`, `SC-004`).
     - `components/ui/section-wrapper.tsx` renders `<section id={id} className="scroll-mt-20 py-14 md:py-20">` with centered container `mx-auto max-w-[1120px] px-4 sm:px-6 md:px-8` and optional monospace index eyebrow + `h2` heading (`FR-001`, `FR-018`).
 
-- [ ] T009 [P] Implement semantic `CategoryBadge` (`components/ui/category-badge.tsx`) and `TimelineBadge` (`components/ui/timeline-badge.tsx`) components
+- [x] T009 [P] Implement semantic `CategoryBadge` (`components/ui/category-badge.tsx`) and `TimelineBadge` (`components/ui/timeline-badge.tsx`) components
   - **DESIGN.md Reference**: §1.2 (Semantic Category & Timeline Badge Tokens), §4.4 (`TimelineBadge`), §4.11 (`CategoryBadge`)
   - **Acceptance Criteria**:
     - `CategoryBadge` maps `"Software"` to Blue (`info`), `"Game Dev"` to Violet (`creative`), `"Hardware"` to Amber (`hardware`), and any other category string to Neutral (`default`) with `rounded-full px-2.5 py-0.5 text-xs font-mono font-medium border` (`FR-008`, `FR-013`, `FR-015`).
     - `TimelineBadge` maps `"work"` (`Briefcase`, Blue), `"school"` (`GraduationCap`, Emerald), `"career"` (`Compass`, Violet), `"certification"` (`Award`, Cyan), and `"achievement"` (`Trophy`, Amber) with matching `14px` Lucide icon (`aria-hidden="true"`) and accessible text label (`FR-006`).
 
-- [ ] T010 [P] Implement client `ImageWithFallback` component in `components/ui/image-with-fallback.tsx`
+- [x] T010 [P] Implement client `ImageWithFallback` component in `components/ui/image-with-fallback.tsx`
   - **DESIGN.md Reference**: §1.1 (`--image-outline`), §4.8 (`ProjectCard` missing/broken image state), §4.9 (`ProjectGallery` failed image state), §4.11 (`ImageWithFallback`)
   - **Acceptance Criteria**:
     - Renders an image with `outline-1 -outline-offset-1 outline-image-outline` (`FR-024`).
     - When `src` is empty/undefined or `onError` fires, renders a clean geometric placeholder container (`bg-muted flex flex-col items-center justify-center gap-2 text-text-muted font-mono text-xs`) so missing or broken images never show a broken browser icon (`FR-008`, `FR-013`, `FR-015`, `SC-003`).
 
-- [ ] T011 Implement shared `ProjectCard` component in `components/projects/project-card.tsx`
+- [x] T011 Implement shared `ProjectCard` component in `components/projects/project-card.tsx`
   - **DESIGN.md Reference**: §1.4 (Concentric Radii & Elevation), §4.8 (`ProjectCard`), §5.2 (Project Card Hover Motion)
   - **Acceptance Criteria**:
     - Renders a full-card `<Link href={`/projects/${project.slug}${fromCategory ? `?from=${encodeURIComponent(fromCategory)}` : ""}`}>` with `rounded-2xl bg-surface border border-border-subtle shadow-card hover:border-border-strong hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200` (`FR-014`, `FR-016`).
     - Displays top `16:9` `ImageWithFallback`, `CategoryBadge`, `h3` title, and `shortDescription` truncated with `line-clamp-3` so all cards maintain uniform height (`FR-008`, `FR-013`).
     - Handles incomplete optional project data gracefully without throwing (`FR-008`, `SC-003`).
 
-- [ ] T012 [P] Implement persistent responsive `Navbar` (`components/layout/navbar.tsx`) and site `Footer` (`components/layout/footer.tsx`)
+- [x] T012 [P] Implement persistent responsive `Navbar` (`components/layout/navbar.tsx`) and site `Footer` (`components/layout/footer.tsx`)
   - **DESIGN.md Reference**: §2.2 (Sticky Navigation Bar), §3.1 (Desktop & Mobile Wireframes), §4.1 (`Navbar` States), §4.11 (`Footer`), §5.2 (Mobile Menu Motion)
   - **Acceptance Criteria**:
     - `Navbar` renders sticky header (`h-16 sticky top-0 z-40 bg-glass backdrop-blur-md border-b border-border-subtle`) with brand link (`/`) and links to `/#about`, `/#projects`, `/#tech-stack`, `/#contact`, plus `/projects` (`FR-018`).
     - On viewports `< 768px`, links collapse into a toggleable menu button (`min-h-11 min-w-11`, `aria-expanded`, `aria-controls`) that closes on link click or `Escape` key (`FR-018`, `SC-004`).
     - Cross-page section links use `/#section-id` so clicking them from `/projects` or `/projects/[slug]` navigates back to the Home page at that section (`FR-018`).
 
-- [ ] T013 [P] Create shared `ContactSection` mount shell in `components/home/contact-section.tsx`
+- [x] T013 [P] Create shared `ContactSection` mount shell in `components/home/contact-section.tsx`
   - **DESIGN.md Reference**: §3.1 (Home Wireframe `04 / CONTACT ME`), §4.10 (`ContactForm`), §4.11 (`ContactSection`)
   - **Acceptance Criteria**:
     - Exports `ContactSection` rendering `<SectionWrapper id="contact" index="04" title="Contact Me">` with a placeholder container so Stream A can import `ContactSection` in `app/page.tsx` during Phase 1 while Stream C replaces `components/home/contact-section.tsx` with the full `ContactForm` integration without any file conflict (`FR-001`, `FR-021`).
 
-- [ ] T014 Update root layout (`app/layout.tsx`) with `Geist` and `Geist Mono` fonts, site-wide metadata from `getProfile()`, `Navbar`, `<main>`, and `Footer`
+- [x] T014 Update root layout (`app/layout.tsx`) with `Geist` and `Geist Mono` fonts, site-wide metadata from `getProfile()`, `Navbar`, `<main>`, and `Footer`
   - **DESIGN.md Reference**: §1.3 (Typography Scale), §2.2 (Global Layout Rules), §3.1 (Wireframes), §4.11 (`Footer`)
   - **Acceptance Criteria**:
     - Configures `--font-geist-sans` and `--font-geist-mono` on `<html>`, applies `bg-canvas text-text-primary font-sans antialiased selection:bg-accent-primary selection:text-accent-on-primary`, and wraps `{children}` with `<Navbar />` and `<Footer />` (`FR-018`, `FR-019`).
     - Exports `metadata: Metadata` populated from `getProfile()` (`title.default`, `title.template: "%s | ICCañete"`, `description`, `openGraph`, `twitter`) (`FR-002`, `FR-024`).
 
-- [ ] T015 Execute **Phase 0 Build Check**: Run `npm run lint` and `npm run build` in repository root to verify all Phase 0 shared infrastructure and components compile with zero errors
+- [x] T015 Execute **Phase 0 Build Check**: Run `npm run lint` and `npm run build` in repository root to verify all Phase 0 shared infrastructure and components compile with zero errors
   - **DESIGN.md Reference**: §1–§5 (Foundation Verification)
   - **Acceptance Criteria**:
     - `npm run lint` exits with code `0` (`SC-003`).

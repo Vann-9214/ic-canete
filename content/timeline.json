@@ -1,0 +1,52 @@
+[
+  {
+    "id": "tl-1",
+    "type": "work",
+    "title": "Full-Stack & Creative Systems Developer",
+    "place": "Independent / Freelance",
+    "startDate": "2024",
+    "endDate": null,
+    "description": "Designing and shipping full-stack web applications, interactive prototypes, and custom hardware-software integrations for clients.",
+    "order": 1
+  },
+  {
+    "id": "tl-2",
+    "type": "career",
+    "title": "Interactive Systems & Creative Engineering Direction",
+    "place": "Independent Studio Practice",
+    "startDate": "2024",
+    "endDate": null,
+    "description": "Directing development of real-time simulation engines, graphics shaders, and physical computing interfaces.",
+    "order": 2
+  },
+  {
+    "id": "tl-3",
+    "type": "achievement",
+    "title": "1st Place — Systems & Hardware Prototyping Showcase",
+    "place": "Regional Engineering Symposium",
+    "startDate": "2024",
+    "endDate": "2024",
+    "description": "Recognized for building a low-latency wireless telemetry bridge between an embedded sensor array and a browser dashboard.",
+    "order": 3
+  },
+  {
+    "id": "tl-4",
+    "type": "certification",
+    "title": "Full-Stack Web Development Certification",
+    "place": "Zuitt Coding Bootcamp",
+    "startDate": "2023",
+    "endDate": "2024",
+    "description": "Completed intensive full-stack engineering training covering modern TypeScript, React, Next.js, REST APIs, and systems architecture.",
+    "order": 4
+  },
+  {
+    "id": "tl-5",
+    "type": "school",
+    "title": "B.S. in Computer Engineering / Computer Science",
+    "place": "University Program",
+    "startDate": "2021",
+    "endDate": null,
+    "description": "Focused on software engineering, embedded microcontrollers, digital logic, and real-time computer graphics.",
+    "order": 5
+  }
+]

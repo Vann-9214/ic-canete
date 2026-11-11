@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" fill="none">
+  <rect width="1280" height="720" fill="#0B0F17" />
+  <rect x="40" y="40" width="1200" height="640" rx="16" fill="#111827" stroke="#1E293B" stroke-width="2" />
+  <text x="80" y="110" fill="#F8FAFC" font-family="sans-serif" font-size="28" font-weight="bold">Sentinel Alert Dispatch Pipeline</text>
+  <rect x="80" y="150" width="1120" height="80" rx="10" fill="#0B0F17" stroke="#1E293B" />
+  <circle cx="120" cy="190" r="12" fill="#EF4444" />
+  <text x="150" y="196" fill="#F8FAFC" font-family="monospace" font-size="20">Rule #104: Service HTTP 5xx Spike &gt; 1.5% [TRIGGERED]</text>
+  <rect x="80" y="250" width="1120" height="80" rx="10" fill="#0B0F17" stroke="#1E293B" />
+  <circle cx="120" cy="290" r="12" fill="#F59E0B" />
+  <text x="150" y="296" fill="#F8FAFC" font-family="monospace" font-size="20">Rule #082: Queue Backpressure Warning [EVALUATING]</text>
+  <rect x="80" y="350" width="1120" height="80" rx="10" fill="#0B0F17" stroke="#1E293B" />
+  <circle cx="120" cy="390" r="12" fill="#10B981" />
+  <text x="150" y="396" fill="#F8FAFC" font-family="monospace" font-size="20">Rule #019: Ingress Healthcheck Response [HEALTHY]</text>
+</svg>

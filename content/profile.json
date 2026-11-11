@@ -1,0 +1,23 @@
+{
+  "name": "Ivan Cañete",
+  "handle": "ICCañete",
+  "role": "Software Engineer · Game Developer · Hardware Builder",
+  "tagline": "I build resilient web systems, interactive game mechanics, and physical computing prototypes that bridge code and hardware.",
+  "aboutMe": [
+    "I am a multidisciplinary developer focused on turning complex technical problems into clean, reliable experiences across full-stack software, real-time game engines, and embedded hardware.",
+    "Whether architecting a Next.js web application, writing custom gameplay systems and shaders, or wiring microcontrollers to sensors, I care deeply about clarity, performance, and practical execution."
+  ],
+  "resumeUrl": "/resume.pdf",
+  "socials": [
+    {
+      "platform": "github",
+      "label": "GitHub",
+      "url": "https://github.com/ic-canete"
+    },
+    {
+      "platform": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/ic-canete"
+    }
+  ]
+}

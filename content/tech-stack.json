@@ -1,0 +1,10 @@
+[
+  { "name": "TypeScript", "icon": "/icons/tech/typescript.svg", "category": "Languages" },
+  { "name": "Next.js", "icon": "/icons/tech/nextjs.svg", "category": "Frameworks & Web" },
+  { "name": "React", "icon": "/icons/tech/react.svg", "category": "Frameworks & Web" },
+  { "name": "Tailwind CSS", "icon": "/icons/tech/tailwindcss.svg", "category": "Frameworks & Web" },
+  { "name": "C++ / C#", "icon": "/icons/tech/cpp.svg", "category": "Languages" },
+  { "name": "Unity / Godot", "icon": "/icons/tech/unity.svg", "category": "Game Dev" },
+  { "name": "Arduino / ESP32", "icon": "/icons/tech/arduino.svg", "category": "Hardware & Tools" },
+  { "name": "Git & Linux", "icon": "/icons/tech/git.svg", "category": "Hardware & Tools" }
+]

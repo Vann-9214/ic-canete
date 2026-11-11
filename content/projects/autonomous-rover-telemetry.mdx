@@ -1,0 +1,28 @@
+---
+title: "Autonomous Rover Telemetry"
+shortDescription: "A dual-MCU robotics platform with wireless telemetry streaming, obstacle avoidance LiDAR mapping, and remote web control."
+category: "Hardware"
+isFeatured: true
+isBestInCategory: true
+order: 3
+images:
+  - src: "/images/projects/rover-main.svg"
+    alt: "Hardware rover prototype chassis and sensor array"
+    caption: "Physical chassis mounting dual ESP32 and STM32 microcontrollers."
+  - src: "/images/projects/rover-circuit.svg"
+    alt: "PCB schematic and power distribution diagram"
+    caption: "Custom power regulation PCB with optoisolated motor drivers."
+links:
+  - label: "Hardware Repository"
+    url: "https://github.com/ic-canete/rover-telemetry"
+downloads: []
+---
+
+## Overview
+
+The Autonomous Rover Telemetry project couples custom microcontroller firmware with an onboard sensor array to navigate constrained environments and broadcast metrics over low-power wireless links.
+
+## Technical Highlights
+
+- **Dual-MCU Architecture**: Segregates real-time motor control loops on an STM32 from high-level Wi-Fi/Bluetooth telemetry on an ESP32.
+- **WebSocket Telemetry Stream**: Broadcasts IMU and LiDAR rangefinder measurements to an operator station at 60 Hz.

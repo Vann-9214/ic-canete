@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" fill="none">
+  <rect width="1280" height="720" fill="#0B130E" />
+  <text x="80" y="100" fill="#34D399" font-family="monospace" font-size="28" font-weight="bold">POWER REGULATION &amp; MOTOR CONTROL SCHEMATIC</text>
+  <rect x="120" y="180" width="260" height="180" rx="12" fill="#13271C" stroke="#059669" stroke-width="2" />
+  <text x="250" y="275" text-anchor="middle" fill="#A7F3D0" font-family="monospace" font-size="20">11.1V 3S LiPo</text>
+  <rect x="510" y="180" width="260" height="180" rx="12" fill="#13271C" stroke="#059669" stroke-width="2" />
+  <text x="640" y="265" text-anchor="middle" fill="#A7F3D0" font-family="monospace" font-size="20">Buck 5V / 3.3V</text>
+  <text x="640" y="295" text-anchor="middle" fill="#6EE7B7" font-family="monospace" font-size="14">TPS54302</text>
+  <rect x="900" y="180" width="260" height="180" rx="12" fill="#13271C" stroke="#059669" stroke-width="2" />
+  <text x="1030" y="265" text-anchor="middle" fill="#A7F3D0" font-family="monospace" font-size="20">H-Bridge Drivers</text>
+  <text x="1030" y="295" text-anchor="middle" fill="#6EE7B7" font-family="monospace" font-size="14">DRV8833 Dual</text>
+  <path d="M380 270 L 510 270" stroke="#10B981" stroke-width="4" />
+  <path d="M770 270 L 900 270" stroke="#10B981" stroke-width="4" />
+</svg>

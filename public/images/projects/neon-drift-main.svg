@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" fill="none">
+  <rect width="1280" height="720" fill="#090514" />
+  <circle cx="640" cy="360" r="280" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="8 8" opacity="0.4" />
+  <circle cx="640" cy="360" r="180" stroke="#EC4899" stroke-width="3" opacity="0.6" />
+  <path d="M0 600 L 1280 600" stroke="#A855F7" stroke-width="4" />
+  <path d="M200 600 L 500 360 L 780 360 L 1080 600" stroke="#6366F1" stroke-width="2" stroke-opacity="0.6" />
+  <polygon points="560,420 720,420 760,490 520,490" fill="#8B5CF6" />
+  <polygon points="540,490 740,490 780,550 500,550" fill="#06B6D4" />
+  <text x="640" y="220" text-anchor="middle" fill="#F472B6" font-family="sans-serif" font-size="48" font-weight="bold" letter-spacing="4">NEON DRIFT</text>
+  <text x="640" y="270" text-anchor="middle" fill="#A5B4FC" font-family="monospace" font-size="20">REAL-TIME SHADER ENGINE</text>
+</svg>

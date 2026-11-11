@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" fill="none">
+  <rect width="1280" height="720" fill="#0F0C20" />
+  <rect x="100" y="160" width="260" height="180" rx="12" fill="#1C1836" stroke="#8B5CF6" stroke-width="2" />
+  <text x="130" y="210" fill="#DDD6FE" font-family="monospace" font-size="18">VertexDisplace</text>
+  <rect x="510" y="260" width="260" height="180" rx="12" fill="#1C1836" stroke="#EC4899" stroke-width="2" />
+  <text x="540" y="310" fill="#FBCFE8" font-family="monospace" font-size="18">ChromaticBloom</text>
+  <rect x="920" y="160" width="260" height="180" rx="12" fill="#1C1836" stroke="#06B6D4" stroke-width="2" />
+  <text x="950" y="210" fill="#CFFAFE" font-family="monospace" font-size="18">MasterOutput</text>
+  <path d="M360 250 C 430 250, 440 350, 510 350" stroke="#A78BFA" stroke-width="3" fill="none" />
+  <path d="M770 350 C 840 350, 850 250, 920 250" stroke="#F472B6" stroke-width="3" fill="none" />
+</svg>

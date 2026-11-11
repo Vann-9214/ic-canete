@@ -1,0 +1,33 @@
+---
+title: "Sentinel Telemetry & Incident Console"
+shortDescription: "A high-density web observability dashboard for monitoring distributed services, latency budgets, and automated alert routing in real time."
+category: "Software"
+isFeatured: true
+isBestInCategory: true
+order: 1
+images:
+  - src: "/images/projects/sentinel-main.svg"
+    alt: "Sentinel Telemetry main overview dashboard"
+    caption: "Real-time service latency and incident timeline view."
+  - src: "/images/projects/sentinel-alerts.svg"
+    alt: "Sentinel alert routing rules matrix"
+    caption: "Rule evaluation pipeline and webhook dispatch inspector."
+links:
+  - label: "Live Demo"
+    url: "https://example.com/sentinel-demo"
+  - label: "Source Repository"
+    url: "https://github.com/ic-canete/sentinel-console"
+downloads:
+  - label: "Architecture Whitepaper (PDF)"
+    fileUrl: "/downloads/sentinel-architecture.pdf"
+    fileSize: "420 KB"
+---
+
+## Overview
+
+Sentinel is a web observability console built to help small engineering teams spot latency regressions and triage service incidents without drowning in noisy alerts.
+
+## Technical Highlights
+
+- **Streaming Metrics Pipeline**: Aggregates percentile latency buckets (`p50`, `p95`, `p99`) with deterministic ring-buffer updates.
+- **Zero-Noise Alert Routing**: Deduplicates flapping health checks before dispatching notifications.

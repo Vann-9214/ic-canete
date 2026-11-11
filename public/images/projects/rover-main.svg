@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" fill="none">
+  <rect width="1280" height="720" fill="#0D1117" />
+  <rect x="340" y="220" width="600" height="340" rx="20" fill="#161B22" stroke="#D97706" stroke-width="3" />
+  <rect x="260" y="240" width="70" height="130" rx="12" fill="#30363D" stroke="#6E7681" stroke-width="2" />
+  <rect x="260" y="410" width="70" height="130" rx="12" fill="#30363D" stroke="#6E7681" stroke-width="2" />
+  <rect x="950" y="240" width="70" height="130" rx="12" fill="#30363D" stroke="#6E7681" stroke-width="2" />
+  <rect x="950" y="410" width="70" height="130" rx="12" fill="#30363D" stroke="#6E7681" stroke-width="2" />
+  <circle cx="640" cy="290" r="50" fill="#F59E0B" fill-opacity="0.2" stroke="#F59E0B" stroke-width="2" />
+  <text x="640" y="296" text-anchor="middle" fill="#FDE68A" font-family="monospace" font-size="16">LiDAR</text>
+  <rect x="420" y="380" width="180" height="120" rx="8" fill="#21262D" stroke="#D97706" />
+  <text x="510" y="445" text-anchor="middle" fill="#FCD34D" font-family="monospace" font-size="16">STM32F4</text>
+  <rect x="680" y="380" width="180" height="120" rx="8" fill="#21262D" stroke="#3B82F6" />
+  <text x="770" y="445" text-anchor="middle" fill="#93C5FD" font-family="monospace" font-size="16">ESP32-S3</text>
+  <text x="640" y="140" text-anchor="middle" fill="#FDE68A" font-family="sans-serif" font-size="36" font-weight="bold">AUTONOMOUS ROVER PLATFORM</text>
+</svg>
