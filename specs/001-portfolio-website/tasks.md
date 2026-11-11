@@ -286,25 +286,25 @@ description: "Dependency-ordered task list for ICCañete Personal Portfolio Webs
 
 **Purpose**: Verify all 31 edge cases, WCAG 2.1 AA accessibility criteria, system theme rules, and `prefers-reduced-motion` behavior with automated tests and final polish.
 
-- [ ] T034 Configure Vitest test runner (`vitest.config.ts`) and Testing Library setup (`tests/setup.ts`)
+- [x] T034 Configure Vitest test runner (`vitest.config.ts`) and Testing Library setup (`tests/setup.ts`)
   - **DESIGN.md Reference**: Verification & Quality Gates
   - **Acceptance Criteria**:
     - `vitest.config.ts` resolves the `@/*` path alias to `./*` and uses the `jsdom` environment (`SC-003`).
     - `tests/setup.ts` imports `@testing-library/jest-dom/vitest` and provides a clean `IntersectionObserver` mock for component tests (`FR-020`, `SC-003`).
 
-- [ ] T035 [P] Write unit tests for content loaders and all missing/empty data edge cases in `tests/content.test.ts`
+- [x] T035 [P] Write unit tests for content loaders and all missing/empty data edge cases in `tests/content.test.ts`
   - **DESIGN.md Reference**: §4.2–§4.9, §4.11 (Data Edge Cases)
   - **Acceptance Criteria**:
     - Tests `getProfile()` (filters empty social URLs, sets `hasResumeFile` for `FR-003`, `FR-004`), `getTimeline()` (normalizes missing `endDate` to `null` for `"Ongoing"` in `FR-006`), `getAllProjects()` (filters empty project links/downloads in `FR-015`), `getCategoriesWithProjects()` (excludes empty categories and falls back to first project when no project has `isBestInCategory: true` in `FR-010`, `FR-011`), and `getProjectBySlug()` (returns `null` on unknown slug in `FR-017`, `SC-003`).
 
-- [ ] T036 [P] Write unit and integration tests for `POST /api/contact` in `tests/contact-api.test.ts`
+- [x] T036 [P] Write unit and integration tests for `POST /api/contact` in `tests/contact-api.test.ts`
   - **DESIGN.md Reference**: §4.10 (`ContactForm` & API Error States)
   - **Acceptance Criteria**:
     - Verifies `400` on empty required fields, invalid email, message `> 2000` characters, and non-empty `website` honeypot (`FR-021`, `FR-022`, `SC-005`).
     - Verifies `429` when more than 3 submissions arrive from the same IP within 10 minutes (`FR-022`).
     - Verifies `200` on valid submission with `replyTo` set to the visitor's email, and `500` with safe user-facing error message when `RESEND_API_KEY` is missing or Resend fails (`FR-023`, `SC-003`, `SC-005`).
 
-- [ ] T037 [P] Write component tests for Hero CV fallback, About/Timeline empty states, Category Tabs switching, and ContactForm input preservation in `tests/components.test.tsx`
+- [x] T037 [P] Write component tests for Hero CV fallback, About/Timeline empty states, Category Tabs switching, and ContactForm input preservation in `tests/components.test.tsx`
   - **DESIGN.md Reference**: §4.2, §4.3, §4.7, §4.10
   - **Acceptance Criteria**:
     - Verifies clicking `Download CV` when `hasResumeFile === false` shows `"Resume not available right now."` without broken navigation (`FR-004`, `SC-003`).
@@ -312,14 +312,14 @@ description: "Dependency-ordered task list for ICCañete Personal Portfolio Webs
     - Verifies `ProjectsBrowser` switches category tabs and hides `CategoryTabs` when only 1 category is provided (`FR-011`, `FR-012`, `SC-002`).
     - Verifies `ContactForm` clears inputs on `200 OK` and preserves typed inputs on `500` error (`FR-023`, `SC-003`, `SC-005`).
 
-- [ ] T038 Audit and polish WCAG 2.1 AA accessibility (`aria-label`, `focus-visible` rings, semantic landmarks, `scroll-mt-20` offsets, `>= 44x44px` hit areas) and reduced-motion behavior across `app/` and `components/`
+- [x] T038 Audit and polish WCAG 2.1 AA accessibility (`aria-label`, `focus-visible` rings, semantic landmarks, `scroll-mt-20` offsets, `>= 44x44px` hit areas) and reduced-motion behavior across `app/` and `components/`
   - **DESIGN.md Reference**: §1.1 (Contrast Ratios), §2.2 (`scroll-mt-20`), §4.1–§4.11 (Focus & ARIA States), §5.3 (`prefers-reduced-motion`)
   - **Acceptance Criteria**:
     - Every icon-only button (`Navbar` mobile toggle, `HeroSection` social links) has an explicit `aria-label` and `min-h-11 min-w-11` (`44x44px`) hit target (`FR-002`, `FR-018`, `SC-004`).
     - Decorative icons beside text carry `aria-hidden="true"` (`SC-004`).
     - All interactive controls include `focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring` (`SC-004`).
 
-- [ ] T039 Execute **Phase 2 Final Build & Verification Check**: Run `npm run lint`, `npm run test`, and `npm run build` in repository root
+- [x] T039 Execute **Phase 2 Final Build & Verification Check**: Run `npm run lint`, `npm run test`, and `npm run build` in repository root
   - **DESIGN.md Reference**: All Sections (§1–§5)
   - **Acceptance Criteria**:
     - `npm run lint` exits with code `0` (`SC-003`).
